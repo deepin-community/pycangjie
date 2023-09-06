@@ -1,0 +1,22 @@
+From: IME Packaging Team <pkg-ime-devel@lists.alioth.debian.org>
+Date: Mon, 5 Nov 2018 19:37:52 -0500
+Subject: cython-version-check
+
+===================================================================
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index a4ed069..794cf5b 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -36,7 +36,7 @@ AS_IF([test "$CYTHON" = no], [AC_MSG_ERROR([cannot find cython.])])
+ # Check for Cython version
+ CYTHON_MIN_VERSION=0.14
+ AC_MSG_CHECKING(for cython version)
+-CYTHON_VERSION=`$CYTHON --version 2>&1 | cut -d" " -f3`
++CYTHON_VERSION=`$CYTHON --version 2>&1 | sed 's/.* \(@<:@0-9.@:>@*\).*/\1/'`
+ AC_MSG_RESULT($CYTHON_VERSION)
+ $PYTHON -c "from distutils.version import StrictVersion as ver; import sys; sys.exit(0 if ver(\"$CYTHON_VERSION\") >= ver(\"$CYTHON_MIN_VERSION\") else 1)"
+ AS_IF([test $? = 1], [AC_MSG_ERROR([Please use cython >= $CYTHON_MIN_VERSION])])

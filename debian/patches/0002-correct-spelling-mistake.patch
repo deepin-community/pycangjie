@@ -1,0 +1,20 @@
+From: Edward Betts <edward@4angle.com>
+Date: Fri, 1 Sep 2017 20:40:51 +0100
+Subject: correct spelling mistake
+
+---
+ src/cangjie/__init__.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/cangjie/__init__.py b/src/cangjie/__init__.py
+index bb7fdb2..e4f0d5c 100644
+--- a/src/cangjie/__init__.py
++++ b/src/cangjie/__init__.py
+@@ -19,6 +19,6 @@
+ # impossible to have a __init__.so file
+ from ._core import *
+ 
+-# Native extentions don't get exposed automatically
++# Native extensions don't get exposed automatically
+ from . import filters
+ from . import versions
