@@ -1,4 +1,14 @@
 #!/usr/bin/make -f
 
+export DH_VERBOSE=1
+
 %:
 	dh $@
+
+override_dh_auto_install:
+	dh_auto_install
+	# Removing unused files
+	find debian/python3-pycangjie/usr/lib -name '*.la' -exec rm '{}' \;
+
+override_dh_missing:
+	dh_missing --fail-missing

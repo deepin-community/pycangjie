@@ -1,5 +1,81 @@
-template-repository (1.0-1) unstable; urgency=medium
+pycangjie (1.3-2) unstable; urgency=medium
 
-  * Initial release
+  * Team upload.
+  * debian/control:
+    + Bump Standards-Version to 4.5.0.
+    + Bump debhelper compat to v12.
+    + Use Build-Dep: dh-sequence-python3. (Closes: #949971)
+  * debian/README.source: Dropped, useless.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Boyuan Yang <byang@debian.org>  Wed, 05 Feb 2020 15:49:37 -0500
+
+pycangjie (1.3-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release 1.3.
+  * debian: Apply "wrap-and-sort -abst".
+  * debian/control:
+    + Bump Standards-Version to 4.2.1 (no changes needed).
+    + Bump debhelper compat to v11.
+    + Update maintainer email address and use Debian Input Method Team.
+      (Closes: #899870)
+    + Update Vcs-* fields and use git repo under Salsa input-method team.
+  * debian/rules: Use "dh_missing --fail-missing".
+  * debian/copyright: Use secure uri.
+  * debian/patches:
+    - Drop patches that are merged upstream.
+    + Cherry-pick an upstream patch to fix typo.
+  * debian/watch: Rewrite in v4 format and watch new upstream
+    GitHub project.
+
+ -- Boyuan Yang <byang@debian.org>  Mon, 05 Nov 2018 19:43:04 -0500
+
+pycangjie (1.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * Fix FTBFS.
+    Thanks to Mathieu Bridon (Closes: #787312)
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@gmail.com>  Sun, 31 May 2015 21:26:51 +0800
+
+pycangjie (1.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Merge changes from last NMU, thanks Matthias for the fix.
+    (Closes: #743284)
+
+ -- Anthony Wong <yp@anthonywong.net>  Sun, 26 Oct 2014 16:46:43 +0800
+
+pycangjie (1.1-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix cython version check. Closes: #743112, #742690.
+  * Drop build dependency on python3-all-dev, the package only builds
+    for the default python3 version. Closes: #734339.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 01 Apr 2014 11:13:50 +0100
+
+pycangjie (1.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Anthony Wong <anthony.wong@ubuntu.com>  Sat, 15 Feb 2014 18:09:14 +0800
+
+pycangjie (1.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Anthony Wong <anthony.wong@ubuntu.com>  Sun, 05 Jan 2014 23:00:13 +0800
+
+pycangjie (0.0.1-1) unstable; urgency=low
+
+  * New upstream release 0.0.1
+  * Upload to Debian (Closes: #712683)
+
+ -- Anthony Wong <anthony.wong@ubuntu.com>  Sun, 15 Sep 2013 23:36:22 +0800
+
+pycangjie (0.0.1~git20130315-0ubuntu1) raring; urgency=low
+
+  * Initial release.
+
+ -- Anthony Wong <anthony.wong@ubuntu.com>  Fri, 15 Mar 2013 05:25:29 +0800
