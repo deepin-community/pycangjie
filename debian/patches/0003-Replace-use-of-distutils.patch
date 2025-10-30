@@ -1,0 +1,24 @@
+From: Sandro <devel@penguinpee.nl>
+Date: Thu, 20 Jul 2023 01:22:15 +0200
+Subject: Replace use of `distutils`
+
+Python3.12 removed `distutils`.
+Use `packaging.version.Version` instead.
+---
+ configure.ac | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index 794cf5b..5ad8137 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -38,7 +38,8 @@ CYTHON_MIN_VERSION=0.14
+ AC_MSG_CHECKING(for cython version)
+ CYTHON_VERSION=`$CYTHON --version 2>&1 | sed 's/.* \(@<:@0-9.@:>@*\).*/\1/'`
+ AC_MSG_RESULT($CYTHON_VERSION)
+-$PYTHON -c "from distutils.version import StrictVersion as ver; import sys; sys.exit(0 if ver(\"$CYTHON_VERSION\") >= ver(\"$CYTHON_MIN_VERSION\") else 1)"
++# Version is strict. See: https://github.com/pypa/packaging/issues/520#issuecomment-1067119795
++$PYTHON -c "from packaging.version import Version as ver; import sys; sys.exit(0 if ver(\"$CYTHON_VERSION\") >= ver(\"$CYTHON_MIN_VERSION\") else 1)"
+ AS_IF([test $? = 1], [AC_MSG_ERROR([Please use cython >= $CYTHON_MIN_VERSION])])
+ 
+ AC_SUBST(CYTHON)

@@ -13,6 +13,7 @@ Build-Depends:
  libtool,
  pkg-config,
  python3-dev (>= 3.2),
+ python3-packaging,
 Standards-Version: 4.5.0
 Homepage: https://github.com/Cangjians/pycangjie
 Vcs-Git: https://salsa.debian.org/input-method-team/pycangjie.git
